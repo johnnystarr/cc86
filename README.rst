@@ -12,10 +12,6 @@ cc86
         :target: https://cc86.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/johnnystarr/cc86/shield.svg
-     :target: https://pyup.io/repos/github/johnnystarr/cc86/
-     :alt: Updates
-
 C Cross Compiler for DOS & early 80x86 CPUs.
 
 * Free software: GNU General Public License v3
