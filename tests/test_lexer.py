@@ -5,15 +5,14 @@ import pytest
 from cc86.lexer import Lexer
 
 
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
+@pytest.fixture()
+def lexer():
+    lexer = Lexer()
+    yield lexer
 
 
-def test_lexer_new():
-    lex = Lexer()
-    assert lex.current_char_count == 1
+def test_lexer_new(lexer):
+    assert lexer.current_char_count == 1
+    assert lexer.current_line_number == 1
+
 

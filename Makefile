@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
+.PHONY: setup clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -47,11 +47,14 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+setup: ## setup development workstation (install deps)
+	pip install -r requirements_dev.txt
+
 lint: ## check style with flake8
 	flake8 cc86 tests
 
 test: ## run tests quickly with the default Python
-	pytest
+	pytest -v -s
 
 test-all: ## run tests on every Python version with tox
 	tox
